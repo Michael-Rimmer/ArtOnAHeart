@@ -6,9 +6,23 @@
         <meta content="ie=edge" http-equiv="X-UA-Compatible">
         <title>Art On A Heart</title>
 
+        <!-- jquery -->
+        <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+
+        <!-- css -->
         <link href="css.css" rel="stylesheet" type="text/css">
+        
+        <!-- image slideshow (slick)-->
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+
+        <!-- font -->
         <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+        
+        <!-- icons -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet">
+        
+        <!-- animations -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" rel="stylesheet">
     </head>
 
@@ -20,13 +34,16 @@
             <br/>
             <div id="pageLinks">
                 <button class="linkButton" onclick="window.location.href ='#aboutSection';">
-                    <i class="fa fa-paint-brush"></i>
+                    <i class="fas fa-paint-brush"></i>
                     ABOUT</button>
-                <button class="linkButton" id="productsButton" onclick="window.location.href ='#productsSection';">
-                    <i class="fa fa-heart"></i>
+                <button class="linkButton middleButton" id="productsButton" onclick="window.location.href ='#productsSection';">
+                    <i class="fas fa-heart"></i>
                     PRODUCTS</button>
+                <button class="linkButton middleButton" id="galleryButton" onclick="window.location.href ='#gallerySection';">
+                    <i class="far fa-images"></i>
+                    GALLERY</button>
                 <button class="linkButton" onclick="window.location.href ='#contactSection';">
-                    <i class="fa fa-envelope"></i>
+                    <i class="fas fa-envelope"></i>
                     CONTACT</button>
             </div>
 
@@ -35,32 +52,49 @@
         <main>
             <section class="content" id="aboutSection">
 
-                <div>
-                    <i class="fa fa-paint-brush"></i>
+                <div class="contentHeader">
+                    <i class="fas fa-paint-brush"></i>
                     ABOUT</div>
 
-                <img alt="Picture of Kaytie" src="">
-                <p>Hi, I'm Kaytie, welcome to my new website!</p>
-
+               
+                <img id ="kaytie" src="imgs/shrek.png" alt="picture of Kaytie">
+                <div id="verticalLine"></div>
+                <p id ="welcomeText">Hi I'm Kaytie and welcome to my new site! ...more welcome content</p>
+              
+               
             </section>
 
             <section class="content" id="productsSection">
 
-                <div>
-                    <i class="fa fa-heart"></i>
+                <div class="contentHeader">
+                    <i class="fas fa-heart"></i>
                     PRODUCTS
                 </div>
 
             </section>
 
+            <section class="content" id="gallerySection">
+
+                <div class="contentHeader">
+                    <i class="fa fa-images"></i>
+                    GALLERY
+                </div>
+
+                <img name="slideshow" height="300" width="300">
+            </section>
+
             <section class="content" id="contactSection">
-                <div>
-                    <i class="fa fa-envelope"></i>
+                <div class="contentHeader">
+                    <i class="fas fa-envelope"></i>
                     CONTACT
                 </div>
 
-                If you're interested in ordering one of my hand-made hearts please send me an email! 
-                                Kaytie_ArtOnAHeart@gmail.com
+                <p>please send me an email if you're interested...
+                </p>
+                <br>
+                <p>
+                    <a href="mailto:email@gmail.com">email@gmail.com</a>
+                </p>
 
             </section>
 
@@ -69,10 +103,40 @@
         <footer>
 
             <div>
-                <i class="fab fa-facebook fa-2x"></i>
+                
+                <a href="https://www.facebook.com/Art-on-a-Heart-by-Kaytie-1676823865738480/"><i class="fab fa-facebook fa-2x"></i></a>
                 <i class="fab fa-instagram fa-2x"></i>
+
+                
             </div>
 
         </footer>
     </body>
 </html>
+
+<script>
+
+    var i =0;
+    var images = [];
+    var time = 3000;
+
+    images[0] = 'imgs/charley.jpg';
+    images[1] = 'imgs/loui.jpg';
+    images[2] = 'imgs/motorbike.jpg';
+
+    function nextImage(){
+
+        document.slideshow.src = images[i];
+
+        if(i<images.length-1){
+            i++;
+        }else{
+            i=0;
+        }
+    
+        setTimeout("nextImage()",time);
+    }
+
+    window.onload = nextImage;
+
+</script>

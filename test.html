@@ -1,0 +1,76 @@
+<head>
+
+    <style>
+        
+        body {
+            margin: 0px;
+        }
+
+        img {
+            height: 250px;
+            width: 250px ;
+            vertical-align: middle;
+        }
+
+        p {
+            width: 250px;
+            text-align: justify;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        section {
+            text-align: center;
+        }
+
+        #verticalLine {
+            border-left: 4px solid rgba(78, 67, 67, 0.267);
+            height: 250px;
+            display: inline-block;
+            margin: 10px 20px;
+            vertical-align: middle;
+            border-radius: 5px;
+        }
+
+        .slideshow{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+</head>
+
+<section>
+
+    
+        <img src="https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-icon.svg" style="vertical-align: middle;"/>
+        <div id ="verticalLine"></div>
+        <p>Hi I'm Kaytie! Welcome to my new site. I started doing art in school and later decided to start selling these hearts because they're the perfect gift... fdsjlfjhsfhdsfjhsjlfhdkjfhfkjf hkjhfd ksjfhkjfhdjskfh;hjfa fh;j</p>
+        
+  
+        <div class="slideshow">
+            <div><img src="imgs/charley.jpg" alt=""></div>
+            <div><img src="imgs/motorbike.jpg" alt=""></div>
+            <div><img src="imgs/loui.jpg" alt="">
+            </div>
+        </div>
+       
+        <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+
+</section>
+
+ 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.slideshow').slick({
+        dots: true,
+        arrows:true,
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    });
+</script>
